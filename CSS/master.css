@@ -1,0 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+/*Faixa de filtros*/
+header {
+    display: inline-flex;
+    width: 100%;
+    height: 50px;
+    background-color: #c6c6c6;
+    color: #fff;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 4px;
+}
+
+/*Ícone de filtro*/
+i.fa-filter{
+    display: inline-flex;
+    height: 100%;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+/*Caixa de filtro na faixa*/
+.header-box {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 29px;
+    color: black;
+    background-color: #ffff;
+    padding: 10px;
+    cursor: pointer;
+    border-right: rgb(190, 190, 190) 1px solid;
+    overflow: unset;
+}
+
+/*Caixa de itens do filtro*/
+.filter-box{
+    display: none;
+    position: fixed;
+    top: 55px;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 700px;
+    z-index: 2;
+}
+
+.filter-box .filter-buttons{
+    display: flex;
+    width: 200px;
+    overflow-y: hidden;
+}
+
+/* Margem do filtro de ciclistas em especifico*/
+div#cyclists > .filter-box{
+    left: 50px;
+    width: 500px;
+    max-height: 700px;
+}
+
+#cyclist-filter{
+    display: inline-block;
+    width: 107px;
+    border-right: rgb(190, 190, 190) 1px solid;
+}
+
+/*Itens do filtro de ciclista e pedalada*/
+#cyclist-filter .filter-item{
+    display: inline-block;
+    height: 20px;
+    cursor: pointer;
+    padding: 3px;
+    padding-right: 20px;
+    overflow: clip;
+}
+
+/*Label dos itens ciclista e pedalada*/
+#cyclist-filter .filter-item  label,
+#pedal-filter .filter-item  label{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/**checkbox ciclistas e pedaladas*/
+#cyclist-filter .filter-item  input,
+#pedal-filter .filter-item  input{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#cyclist-filter .filter-item  input{
+    display: none;
+}
+
+#cyclist-filter .filter-item:hover{
+   background-color: rgb(190, 190, 190);
+}
+
+#cyclist-filter, #pedal-filter{
+    flex: none;
+}
+
+#pedal-filter{
+    display: inline-block;
+    height: 490px;
+    width: 388px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#pedal-filter .filter-item{
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    cursor: pointer;
+    padding: 3px;
+    padding-right: 20px;
+}
+
+#pedal-filter .filter-item:hover{
+    background-color: rgb(190, 190, 190);
+ }
+
+#pedal-filter .filter-item i{
+    display: inline-block;
+    font-size: 10px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 4px; 
+    height: calc(100vh - 50px);
+}
+
+/*Campos de gráfico*/
+.box {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+    color: #838383;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/*Overlay de seleção de filtro*/
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
