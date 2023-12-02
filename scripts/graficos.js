@@ -59,7 +59,7 @@ var meuGrafico = new Chart(ctx, {
 });
 
 var ctx = document.getElementById('meuGrafico3').getContext('2d');
-var meuGrafico = new Chart(ctx, {
+var meuGrafico3 = new Chart(ctx, {
     type: 'line',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -117,7 +117,7 @@ var meuGrafico = new Chart(ctx, {
 
 
 var ctx = document.getElementById('meuGrafico2').getContext('2d');
-var meuGrafico3 = new Chart(ctx, {
+var meuGrafico2 = new Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
