@@ -2,8 +2,8 @@
 var c10 = '#1f8d9F'   
 //var graficos = [meuGrafico, meuGrafico2] 
 
-var ctx = document.getElementById('meuGrafico').getContext('2d');
-var meuGrafico = new Chart(ctx, {
+var ctx1 = document.getElementById('meuGrafico').getContext('2d');
+var meuGrafico = new Chart(ctx1, {
     type: 'line',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -58,8 +58,8 @@ var meuGrafico = new Chart(ctx, {
     }
 });
 
-var ctx = document.getElementById('meuGrafico3').getContext('2d');
-var meuGrafico3 = new Chart(ctx, {
+var ctx2 = document.getElementById('meuGrafico2').getContext('2d');
+var meuGrafico2 = new Chart(ctx2, {
     type: 'line',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -116,8 +116,8 @@ var meuGrafico3 = new Chart(ctx, {
 
 
 
-var ctx = document.getElementById('meuGrafico2').getContext('2d');
-var meuGrafico2 = new Chart(ctx, {
+var ctx3 = document.getElementById('meuGrafico3').getContext('2d');
+var meuGrafico3 = new Chart(ctx3, {
     type: 'bar',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
@@ -147,8 +147,8 @@ var meuGrafico2 = new Chart(ctx, {
 
 
 
-var ctx = document.getElementById('meuGrafico4').getContext('2d');
-var meuGrafico4 = new Chart(ctx, {
+var ctx4 = document.getElementById('meuGrafico4').getContext('2d');
+var meuGrafico4 = new Chart(ctx4, {
     type: 'bar',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
