@@ -51,7 +51,6 @@ i.fa-filter{
 /*Caixa de itens do filtro*/
 .filter-box{
     display: none;
-    position: fixed;
     top: 55px;
     color: black;
     background-color: rgb(255, 255, 255);
@@ -62,97 +61,32 @@ i.fa-filter{
     z-index: 2;
 }
 
-.filter-box .filter-buttons{
-    display: flex;
-    width: 200px;
-    overflow-y: hidden;
-}
-
-/* Margem do filtro de ciclistas em especifico*/
-div#cyclists > .filter-box{
-    left: 50px;
-    width: 500px;
-    max-height: 700px;
-}
-
-#cyclist-filter{
-    display: inline-block;
-    width: 107px;
-    border-right: rgb(190, 190, 190) 1px solid;
-}
-
-/*Itens do filtro de ciclista e pedalada*/
-#cyclist-filter .filter-item{
-    display: inline-block;
-    height: 20px;
-    cursor: pointer;
-    padding: 3px;
-    padding-right: 20px;
-    overflow: clip;
-}
-
-/*Label dos itens ciclista e pedalada*/
-#cyclist-filter .filter-item  label,
-#pedal-filter .filter-item  label{
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-/**checkbox ciclistas e pedaladas*/
-#cyclist-filter .filter-item  input,
-#pedal-filter .filter-item  input{
-    margin-left: 10px;
-    cursor: pointer;
-}
-
-#cyclist-filter .filter-item  input{
-    display: none;
-}
-
-#cyclist-filter .filter-item:hover{
-   background-color: rgb(190, 190, 190);
-}
-
-#cyclist-filter, #pedal-filter{
-    flex: none;
-}
-
-#pedal-filter{
-    display: inline-block;
-    height: 490px;
-    width: 388px;
-    overflow-y: auto;
-    overflow-x: hidden;
-}
-
-#pedal-filter .filter-item{
-    display: inline-block;
-    width: 100%;
-    height: 20px;
-    cursor: pointer;
-    padding: 3px;
-    padding-right: 20px;
-}
-
-#pedal-filter .filter-item:hover{
-    background-color: rgb(190, 190, 190);
- }
-
-#pedal-filter .filter-item i{
-    display: inline-block;
-    font-size: 10px;
-}
-
 main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "chart1 chart2"
+                         "chart3 chart4";
     gap: 4px; 
     height: calc(100vh - 50px);
 }
 
+#chartcontainer{
+    grid-area: chart1;
+}
+
+#chartcontainer2{
+    grid-area: chart2;
+}
+
+#chartcontainer3{
+    grid-area: chart3;
+}
+
+#chartcontainer4{
+    grid-area: chart4;
+}
+
 /*Campos de gráfico*/
-.box {
+/*.box {
     display: flex;
     padding: 20px;
     justify-content: center;
@@ -163,6 +97,7 @@ main {
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
+*/
 
 /*Overlay de seleção de filtro*/
 .overlay {
@@ -176,3 +111,6 @@ main {
     z-index: 1;
 }
 
+.chartContainer{
+    display: none;
+}

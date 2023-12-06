@@ -48,11 +48,11 @@ function toggleDropdown(elem) {
     
         var overlay = document.getElementById("overlay");
 
-        if (firstChild.style.display === "flex") {
+        if (firstChild.style.display === "grid") {
             firstChild.style.display = "none";
             overlay.style.display = "none";
         } else {
-            firstChild.style.display = "flex";
+            firstChild.style.display = "grid";
             overlay.style.display = "inherit";
         }
     }

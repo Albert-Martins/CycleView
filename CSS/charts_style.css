@@ -2,13 +2,14 @@
     max-width: 100%;
     max-height: 100%;
     position: relative;
-    display: inline-block
+    display: flex;
 }
+
 canvas {
-    
     height: auto;
     border: 1px solid #ccc;
 }
+
 .expandir {
     position: absolute;
     top: 10px;
@@ -25,7 +26,7 @@ canvas {
     height: 100vh;
     background: white;
     display: none;
-    z-index: 9999;
+    z-index: 999;
 }
 .fullScreen canvas {
     width: 100%;
@@ -40,7 +41,8 @@ canvas {
     background: white;
     padding: 8px 16px;
     cursor: pointer;
-    z-index: 9999;
+    z-index: 999;
+
 }
 
 
