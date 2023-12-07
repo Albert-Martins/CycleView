@@ -1,4 +1,4 @@
-const db = require('../Dados/database.js');
+const db = require('../../Dados/database.js');
 
 const sql = 'SELECT distance_history, pedal, creator FROM pedaladas WHERE cd_ciclista = ?';
 const algumValor = 2;

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const db = require('../Dados/database.js');
+const db = require('../../Dados/database.js');
 
 const sql = `
 INSERT INTO pedaladas 

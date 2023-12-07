@@ -63,33 +63,17 @@ i.fa-filter{
 
 main {
     display: grid;
-    grid-template-areas: "chart1 chart2"
-                         "chart3 chart4";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: 4px; 
-    height: calc(100vh - 50px);
-}
-
-#chartcontainer{
-    grid-area: chart1;
-}
-
-#chartcontainer2{
-    grid-area: chart2;
-}
-
-#chartcontainer3{
-    grid-area: chart3;
-}
-
-#chartcontainer4{
-    grid-area: chart4;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 /*Campos de gráfico*/
-/*.box {
-    display: flex;
-    padding: 20px;
-    justify-content: center;
+.box {
+    display: block;
+    height: 45.5vh;
     color: #838383;
     align-items: center;
     box-sizing: border-box;
@@ -97,7 +81,6 @@ main {
     border-radius: 5px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
-*/
 
 /*Overlay de seleção de filtro*/
 .overlay {
