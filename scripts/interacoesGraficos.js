@@ -79,8 +79,8 @@ function expandir(elem){
     
     }
 
-    var graficos = [meuGrafico, meuGrafico2] 
-    var switchElement = document.getElementById("toggleSwitch");
+    var graficos = [char1, char2] 
+    var switchElement = document.getElementById("padrao");
 
    
     switchElement.addEventListener('change', function() {
