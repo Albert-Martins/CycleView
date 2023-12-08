@@ -79,7 +79,7 @@ function expandir(elem){
     
     }
 
-    var graficos = [Chart1, Chart2] 
+    var graficos = [chart1, chart2] 
     var switchElement = document.getElementById("padrao");
 
    
