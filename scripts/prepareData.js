@@ -70,7 +70,7 @@ function prepareLineDataChart1(data){
 
     for(i = 0; i < data[0].values.length; i++){
 
-        tempObject = 
+        tempObject1 = 
             {
 
                 label: data[0].values[i][1], 
@@ -80,15 +80,15 @@ function prepareLineDataChart1(data){
             }
         
         if(iconsEnabled){
-            tempObject.pointRadius = 5;
-            tempObject.borderWidth = 3;
-            tempObject.pointStyle = options.icons[i];
+            tempObject1.pointRadius = 5;
+            tempObject1.borderWidth = 3;
+            tempObject1.pointStyle = options.icons[i];
         }
         
-        chart1Dataset.push(tempObject);
+        chart1Dataset.push(tempObject1);
     }
 
-    console.log(tempObject);
+    console.log(tempObject1);
 
     for(i = 0; i < data[0].values.length; i++){
         if(tempMaiorDistancia < data[0].values[i][2]){
@@ -122,7 +122,14 @@ function prepareLineDataChart1(data){
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Frequência cardíaca'
+                        text: 'Frequência cardíaca (bpm por Km)'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                          usePointStyle: true
+                        }
                     }
                 },
             }
@@ -141,7 +148,7 @@ function prepareLineDataChart2(data){
 
     for(i = 0; i < data[0].values.length; i++){
 
-        tempObject = 
+        tempObject2 = 
             {
 
                 label: data[0].values[i][1], 
@@ -151,15 +158,15 @@ function prepareLineDataChart2(data){
             }
         
         if(iconsEnabled){
-            tempObject.pointRadius = 5;
-            tempObject.borderWidth = 3;
-            tempObject.pointStyle = options.icons[i];
+            tempObject2.pointRadius = 5;
+            tempObject2.borderWidth = 3;
+            tempObject2.pointStyle = options.icons[i];
         }
         
-        chart2Dataset.push(tempObject);
+        chart2Dataset.push(tempObject2);
     }
 
-    console.log(tempObject);
+    console.log(tempObject2);
 
     for(i = 0; i < data[0].values.length; i++){
         if(tempMaiorDistancia < data[0].values[i][2]){
@@ -184,6 +191,7 @@ function prepareLineDataChart2(data){
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: true,
                 legend: {
                     display: false,
                     labels: {
@@ -193,7 +201,14 @@ function prepareLineDataChart2(data){
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Velocidade'
+                        text: 'Velocidade (Km/h - Distância)'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                          usePointStyle: true
+                        }
                     }
                 },
                 
@@ -210,30 +225,29 @@ function prepareRadarDataChart3(data){
 
     for(i = 0; i < data[0].values.length; i++){
 
-        tempObject = 
+        tempObject3 = 
             {
 
                 label: data[0].values[i][1], 
                 data: [data[0].values[i][6],data[0].values[i][7],data[0].values[i][8]],
-                backgroundColor: options.color[colorPattern][i],
+                //backgroundColor: `rgba(${options.color[colorPattern][i]}, 0.3)`,
                 borderColor: options.color[colorPattern][i],
             }
         
         if(iconsEnabled){
-            tempObject.pointRadius = 5;
-            tempObject.borderWidth = 3;
-            tempObject.pointStyle = options.icons[i];
+            tempObject3.pointRadius = 5;
+            tempObject3.borderWidth = 3;
+            tempObject3.pointStyle = options.icons[i];
         }
         
-        chart3Dataset.push(tempObject);
+        chart3Dataset.push(tempObject3);
     }
 
-    console.log(tempObject);
+    console.log(tempObject3);
     
     chart3Ctx = document.querySelector('canvas#chart3').getContext('2d');
     
     if(chart3){
-        chart3.data.labels = labelRange;
         chart3.data.datasets = chart3Dataset;
         chart3.update();
     }else{
@@ -256,7 +270,14 @@ function prepareRadarDataChart3(data){
                 plugins: {
                     title: {
                         display: true,
-                        text: 'Velocidade'
+                        text: 'Indicadores Médios'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'bottom', // Posiciona a legenda à esquerda
+                        labels: {
+                          usePointStyle: true
+                        }
                     }
                 },
                 

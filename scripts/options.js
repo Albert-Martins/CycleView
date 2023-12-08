@@ -9,7 +9,7 @@ options = {
     'cross',
     'rect',
     'rectRot',
-    'star',
+    'rectRounded',
     'triangle'
     ]
 }
