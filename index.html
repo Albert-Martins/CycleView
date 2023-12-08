@@ -10,7 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js" integrity="sha512-n7swEtVCvXpQ7KxgpPyp0+DQQEf5vPpmzCRl14x2sp2v5LpCYCjrAx03mkBAbWwGF9eUoIk8YVcDFuJRIeYttg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://kit.fontawesome.com/328f5fee1d.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet"  href="CSS/charts_style.css" /> -->
+    <link rel="stylesheet"  href="CSS/charts_style.css" />
     <title>Cicle</title>
 </head>
 <body>
@@ -23,14 +23,14 @@
         <div class="header-box" id="cyclists" onclick="toggleDropdown(this)" >Ciclistas
 
             <!-- Caixinha com as opções do filtro -->
-            <div class="filter-box">
+            <div class="filter-box" >
                 
                 <!-- Form de ciclistas -->
                 <form id="cyclist-filter">
                     
                 </form>
                 
-                <form id="pedal-filter">
+                <form id="pedal-filter" onchange="updateFilterStyle()">
                     <div class="filter-item-container" ciclista="1">
                         <div class="filter-item">
                             <input type="checkbox" id="ciclista1pedal3" value="3" ciclista="1" pedalada="3">
@@ -28626,19 +28626,23 @@
                     </div>
                 </form>
                 <!-- Botões do filtro -->
-                <button id="cancel" class="filter-buttons" onclick="closeDropdown()">Cancelar</button>
-                <button id="confirm" class="filter-buttons">Confirmar</button>
+                <button id="cancel" class="filter-buttons" onclick="closeDropdown(this)">Cancelar</button>
+                <button id="confirm" class="filter-buttons" onclick="prepareItems(); closeDropdown(this);">Confirmar</button>
             </div>
             
         </div>
 
         <!-- <div class="header-box">Distância</div> -->
     
-    <i class="fa-solid fa-gear" onclick="openMenu()" title="Opções"></i>
+    <i class="fa-solid fa-database" onclick="openMenu(this)" id="openDataIcon" title="dados"></i>
+    
+    <i class="fa-solid fa-gear" onclick="openMenu(this)" id="openOptionsIcon" title="Opções"></i>
 
-    <i id="closeMenuIcon" class="fa-solid fa-xmark" onclick="closeMenu()" title="Fechar menu"></i>
+    <i id="closeOptionsMenuIcon" class="fa-solid fa-xmark" onclick="closeMenu(this)" title="Fechar menu"></i>
+    
+    <i id="closeDataMenuIcon" class="fa-solid fa-xmark" onclick="closeMenu(this)" title="Fechar menu"></i>
 
-    <div id="menu">
+    <div id="menuOpcoes" class='menu'>
         
         <h3>Opções</h3>
 
@@ -28649,7 +28653,7 @@
             <label for="padrao">Padrão</label>
             <br>
             <input type="radio" id="altoContraste" name="cor">
-            <label for="altoContraste">Alto Contraste</label>
+            <label for="altoContraste" title="Auxilia na identificação por cores para pessoas com Daltonismo" >Alto Contraste</label>
         </div>
 
         <div class="slider-container" title="Adiciona ícones aos rótulos que auxiliam na leitura dos gráficos">
@@ -28659,6 +28663,10 @@
             <input type="checkbox" class="slider" id="myToggle">
         </div>
 
+    </div>
+
+    <div id="menuDados" class="menu">
+        <h3>Dados</h3>
     </div>
 
     </header>
@@ -28712,23 +28720,29 @@
         </div>
         </div> -->
 
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
-    <div class="box"></div>
+    <div class="box" id="chart1"> <canvas id="chart1"></canvas><button id="expandir1" class="expandir" chart="chart1" onclick="expandir(this)"><i class="fa-solid fa-expand"></i></button>
+    </div>
+
+    <div class="box" id="chart2">Selecione dados no filtro para visualizar...</div>
+    <div class="box" id="chart3">Selecione dados no filtro para visualizar...</div>
+    <div class="box" id="chart4">Selecione dados no filtro para visualizar...</div>
 
     </main>
 
 
 
-    <div id="overlay" class="overlay" onclick="closeDropdown()"></div>
+    <div id="overlay" class="overlay" onclick="closeDropdown(this)"></div>
 
-    <div id="menuoverlay" class="overlay" onclick="closeMenu()"></div>
+    <div id="menuoverlay" class="overlay" onclick="closeMenu(this)"></div>
     
     <script src="scripts/loadData.js"></script>
     <script src="scripts/cyclistFilter.js"></script>
     <script src="scripts/menu.js"></script>
-    <script src="scripts/graficos.js"></script>
+    
+    <!-- <script src="scripts/graficos.js"></script> -->
+
     <script src="scripts/interacoesGraficos.js"></script>
+    <script src="scripts/prepareData.js"></script>
+    <script src="scripts/charts.js"></script>
 </body>
 </html>

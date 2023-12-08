@@ -73,9 +73,12 @@ main {
 
 /*Campos de gráfico*/
 .box {
-    display: block;
+    position: relative;
+    display: flex;
     height: 45.5vh;
+    z-index: 1;
     color: #838383;
+    justify-content: center;
     align-items: center;
     box-sizing: border-box;
     border: 1px solid #ccc;

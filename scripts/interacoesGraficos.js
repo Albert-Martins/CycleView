@@ -1,6 +1,45 @@
+function expandir(elem){
+  chartID = elem.getAttribute('chart');
+  
+  console.log(chartID);
 
+  chartBox = document.querySelector(`#${chartID}`);
+  canvas = document.querySelector(`#${chartID} canvas#${chartID}`);
+  console.log(canvas.id);
+
+  if(getCSSAttribute(chartBox,'position') == 'relative'){
     
-    function expandir(div,Canvagrafico,grafico, botao) {
+    chartBox.style.position = 'absolute';
+    chartBox.style.backgroundColor = 'white';
+    chartBox.style.top = 0;
+    chartBox.style.top = 0;
+    chartBox.style.zIndex = '3';
+
+    chartBox.style.width = '100%';
+    chartBox.style.height = '100%';
+
+    elem.innerHTML = '<i class="fa-solid fa-compress"></i>';
+
+    console.log (getCSSAttribute(chartBox,'position'));
+
+  }else{
+    chartBox.style.position = 'relative';
+    chartBox.style.backgroundColor = 'white';
+    chartBox.style.margin = '0px';
+    chartBox.style.top = 0;
+    chartBox.style.zIndex = '1';
+
+    chartBox.style.width = '1fr';
+    chartBox.style.height = '45.5vh';
+
+    elem.innerHTML = '<i class="fa-solid fa-expand"></i>';
+
+  }
+}
+  
+
+
+    /*function expandir(div,Canvagrafico,grafico, botao) {
         document.getElementById(div).style.display = 'block';
         document.getElementById(botao).style.display = 'block';
 
@@ -16,6 +55,8 @@
 
         //document.querySelector('.expandirFullscreen').style.display = 'block';
     }
+
+    */
 
     function fecharFullscreen(div,botao) {
         document.getElementById(div).style.display = 'none';

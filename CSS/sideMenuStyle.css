@@ -11,7 +11,8 @@ i.fa-gear{
     cursor: pointer;
 }
 
-#menu{
+#menuOpcoes,
+#menuDados{
      display: inline-block;
      position: absolute;
      background-color: #c6c6c6;
@@ -25,24 +26,25 @@ i.fa-gear{
      box-sizing: border-box;
 }
 
-#menu p{
+#menuOpcoes p{
     margin-top: 20px;
     font-size: 20px;
 }
 
-#menu h3{
+#menuOpcoes h3,
+#menuDados h3{
     display: inline-block;
     width: 100%;
     text-align: center;
 }
 
-#menu div#radioGroup{
+#menuOpcoes div#radioGroup{
     display: inline-block;
     margin-top: 10px;
     padding-left: 20px;
 }
 
-#menu div#radioGroup input{
+#menuOpcoes div#radioGroup input{
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -56,13 +58,13 @@ i.fa-gear{
     margin-right: 5px;
 }
 
-#menu div#radioGroup input:checked{
+#menuOpcoes div#radioGroup input:checked{
     background-color: white;
 
 }
 
-#menu div#radioGroup input,
-#menu div#radioGroup label{
+#menuOpcoes div#radioGroup input,
+#menuOpcoes div#radioGroup label{
     display: inline-block;
     cursor: pointer;
     margin-top: 10px;
@@ -70,7 +72,8 @@ i.fa-gear{
     -moz-appearance: none;
 }
 
-#closeMenuIcon{
+#closeOptionsMenuIcon,
+#closeDataMenuIcon{
     display: none;
     cursor: pointer;
     position: absolute;
@@ -139,6 +142,19 @@ i.fa-gear{
 /* Removendo a aparência padrão do checkbox */
 .slider:checked {
     appearance: none;
+}
+
+i.fa-database{
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    right: 50px;
+    top: 12px;
+    cursor: pointer;
 }
 
 

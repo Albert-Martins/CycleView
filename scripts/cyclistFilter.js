@@ -1,6 +1,7 @@
 const cyclistFilter = document.querySelector('#cyclist-filter');
 const pedalFilter = document.querySelector('#pedal-filter');
 const pedalItems = document.querySelectorAll('#pedal-filter div.filter-item-container');
+var lastCyclistFocus;
 
 let pedaladas;
 
@@ -29,11 +30,9 @@ loadQuery('select cd_ciclista, pedal, distance, locality from pedaladas', (error
 for(i = 1; i <= 19; i++){
     cyclistFilter.innerHTML = cyclistFilter.innerHTML + `<div class="filter-item" >
     <input type="checkbox" id="ciclista${i.toString().padStart(2,'0')}" value="${i}" disabled >
-    <label for="ciclista${i.toString().padStart(2,'0')}" id="${i}" onmouseover="showItems(this)" disabled >Ciclista ${i.toString().padStart(2,'0')}</label><br>
+    <label for="ciclista${i.toString().padStart(2,'0')}" id="${i}" onmouseover="showItems(this);" disabled >Ciclista ${i.toString().padStart(2,'0')}</label><br>
 </div>`
 }
-
-
 
 //pega o valor do atributo do elmento passado nos parametros
 function getCSSAttribute(elem, attr){
@@ -58,7 +57,8 @@ function toggleDropdown(elem) {
     }
 }
 
-function closeDropdown() {
+function closeDropdown(elem) {
+
     var dropdown = document.querySelectorAll(".filter-box");
     var overlay = document.getElementById("overlay");
     dropdown.forEach(function (item){
@@ -95,8 +95,18 @@ function hideAllItems(){
 }
 
 function showItems(master){
-    
     IDitem = master.id;
+
+    lastCyclistFocus = master;
+
+    cyclistLabels = document.querySelectorAll('#cyclist-filter .filter-item');
+
+    for(i = 0; i < cyclistLabels.length; i++){
+            
+        if(cyclistLabels[i].firstElementChild.value == lastCyclistFocus){
+            cyclistLabels[i].style.backgroundColor = "#c6c6c6";
+        }
+    }
 
     items = document.querySelectorAll('.filter-item-container');
 
@@ -106,5 +116,46 @@ function showItems(master){
         if(item.getAttribute('ciclista') == IDitem){
             item.style.display = 'inline-block';   
         }
+    });
+}
+
+function updateFilterStyle(){
+
+    cyclistLabels = document.querySelectorAll('#cyclist-filter .filter-item');
+
+    pedalInputs = document.querySelectorAll('#pedal-filter .filter-item-container .filter-item input');
+    pedalInputsChecked = document.querySelectorAll('#pedal-filter .filter-item-container .filter-item input:checked');
+    
+    selectedCyclists = [];
+    pedalInputsChecked.forEach((item) => {
+        selectedCyclists.push(item.getAttribute('ciclista'));
+    });
+    
+        for(i = 0; i < cyclistLabels.length; i++){
+            
+            if(selectedCyclists.includes(cyclistLabels[i].firstElementChild.value)){
+
+                cyclistLabels[i].style.backgroundColor = "#c6c6c6";
+                
+            }else{
+                cyclistLabels[i].style.backgroundColor = "white";
+            }
+        }
+
+
+    if(pedalInputsChecked.length >= 6){
+        console.log("atingiu o limite");
+
+        pedalInputs.forEach((item) => {
+                item.setAttribute('disabled','disabled');
+        });
+    }else{
+        pedalInputs.forEach((item) => {
+            item.removeAttribute('disabled');
+    });
+    }
+
+    pedalInputsChecked.forEach((item) => {
+        item.removeAttribute('disabled');
     });
 }
