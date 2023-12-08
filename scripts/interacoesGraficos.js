@@ -95,7 +95,7 @@ function expandir(elem){
         //console.log(graficos.length);
         graficos.forEach(element => {
             //console.log(element.canvas);
-            trocaCor(element,c1);
+            trocaCor(element,c2);
         })
       } 
     });
@@ -107,7 +107,7 @@ function expandir(elem){
         //console.log(graficos.length);
         graficos.forEach(element => {
             //console.log(element.canvas);
-            trocaCor(element,c2);
+            trocaCor(element,c1);
         })
       } 
     });
