@@ -153,12 +153,20 @@ var myRadarChart = new Chart(ctx4, {
     data: {
       labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5'],
       datasets: [{
-        label: 'Valores',
-        data: [10, 20, 15, 25, 18], // Valores para cada categoria
-        backgroundColor: 'rgba(54, 162, 235, 0.2)', // Cor de preenchimento
-        borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda
-        borderWidth: 1
-      }]
+            label: '01',
+            data: [10, 20, 15, 25, 18], // Valores para cada categoria
+            backgroundColor: 'rgba(54, 162, 235, 0.2)', // Cor de preenchimento
+            borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda
+            borderWidth: 1
+        },
+        {
+            label: '02',
+            data: [8, 25, 16, 25, 2], // Valores para cada categoria
+            backgroundColor: 'rgba(54, 162, 235, 0.2)', // Cor de preenchimento
+            borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda
+            borderWidth: 1
+        }
+      ]
     },
     options: {
       // Opções adicionais, como título, legenda, etc.
