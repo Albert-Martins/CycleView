@@ -28626,21 +28626,40 @@
                     </div>
                 </form>
                 <!-- Botões do filtro -->
-                <button id="cancel" class="filter-buttons">Cancelar</button>
+                <button id="cancel" class="filter-buttons" onclick="closeDropdown()">Cancelar</button>
                 <button id="confirm" class="filter-buttons">Confirmar</button>
             </div>
             
         </div>
 
-        <div class="header-box">Distância</div>
-
-        <label class="toggle">
-            <input id="toggleSwitch" type="checkbox">
-            <span class="slider"></span>
-        </label>
+        <!-- <div class="header-box">Distância</div> -->
     
-    <i class="fa-solid fa-gear" onclick="openMenu()"></i>
-    <div id="menu"></div>
+    <i class="fa-solid fa-gear" onclick="openMenu()" title="Opções"></i>
+
+    <i id="closeMenuIcon" class="fa-solid fa-xmark" onclick="closeMenu()" title="Fechar menu"></i>
+
+    <div id="menu">
+        
+        <h3>Opções</h3>
+
+        <p>Cores:</p>
+
+        <div id="radioGroup">
+            <input type="radio" id="padrao" name="cor" checked>
+            <label for="padrao">Padrão</label>
+            <br>
+            <input type="radio" id="altoContraste" name="cor">
+            <label for="altoContraste">Alto Contraste</label>
+        </div>
+
+        <div class="slider-container" title="Adiciona ícones aos rótulos que auxiliam na leitura dos gráficos">
+            <!-- Label -->
+            <p class="label">Ícones:</p>
+            <!-- Toggle slider -->
+            <input type="checkbox" class="slider" id="myToggle">
+        </div>
+
+    </div>
 
     </header>
 

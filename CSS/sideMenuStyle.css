@@ -8,6 +8,7 @@ i.fa-gear{
     font-size: 25px;
     right: 0%;
     top: 12px;
+    cursor: pointer;
 }
 
 #menu{
@@ -18,7 +19,126 @@ i.fa-gear{
      left: 100%;
      width: 250px;
      height: 100%;
-     cursor: pointer;
      z-index: 2;
      transition: left 2s linear;
+     padding: 20px;
+     box-sizing: border-box;
 }
+
+#menu p{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+#menu h3{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+#menu div#radioGroup{
+    display: inline-block;
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+#menu div#radioGroup input{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background-color: #ffffff00;
+    outline: none;
+    margin-bottom: 2px;
+    margin-right: 5px;
+}
+
+#menu div#radioGroup input:checked{
+    background-color: white;
+
+}
+
+#menu div#radioGroup input,
+#menu div#radioGroup label{
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+#closeMenuIcon{
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    text-align: center;
+    padding: 12px;
+    padding-left: 15px;
+    font-size: 25px;
+    right: 0%;
+    z-index: 3;
+    right: 250px;
+    background: #c6c6c6;
+    border-radius: 5px 0px 0px 5px;
+}
+
+/* Estilo do botão de icones */
+
+/* Estilizando o container */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Estilizando o label */
+.label {
+    display: flex;
+    font-size: 20px;
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+/* Estilizando o botão toggle */
+.slider {
+    display: flex;
+    background-color: white;
+    border-radius: 25px;
+    appearance: none;
+    position: relative;
+    width: 45px;
+    margin-top: 21.2px;
+    height: 22px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Estilizando a bolinha deslizante */
+.slider::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #686868;
+    transition: 0.4s;
+    appearance: none;
+}
+
+/* Estilizando a bolinha deslizante quando o toggle está ativo */
+.slider:checked::before {
+    appearance: none;
+    background: #007BFF;
+    transform: translateX(24px);
+}
+
+/* Removendo a aparência padrão do checkbox */
+.slider:checked {
+    appearance: none;
+}
+
+
