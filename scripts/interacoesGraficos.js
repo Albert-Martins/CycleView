@@ -80,30 +80,34 @@ function expandir(elem){
     }
 
     var graficos = [chart1, chart2] 
-    var switchElement = document.getElementById("padrao");
+    // azul, verde, amarelo, cinza, rosa, vermelho
+    c1 = ['#002AB7','#2B8C67','#EDC51F','#DCDEF3','#D436D9', '#9A1801'];
+    //azul, verde, amarelo, vermelho, rosa, laranja
+    c2 = ['#1E31DB','#2BDC7B','#DBCC24','#DB3213','#CD0EDB', '#DB6500'];
+    var padrao = document.getElementById("padrao");
+    var alto = document.getElementById("altoContraste");
 
    
-    switchElement.addEventListener('change', function() {
+    padrao.addEventListener('change', function() {
       console.log('identificou mudança');
-      // azul, verde, amarelo, cinza, rosa, vermelho
-      c1 = ['#002AB7','#2B8C67','#EDC51F','#DCDEF3','#D436D9', '#9A1801'];
-      //azul, verde, amarelo, vermelho, rosa, laranja
-      c2 = ['#1E31DB','#2BDC7B','#DBCC24','#DB3213','#CD0EDB', '#DB6500'];
-      
-      
       if (this.checked) {
-        console.log('O switch está ligado');
+        console.log('Padrao');
         //console.log(graficos.length);
         graficos.forEach(element => {
             //console.log(element.canvas);
             trocaCor(element,c1);
         })
-      } else {
-        console.log('O switch está desligado');
-        graficos.forEach(element => {
-          //console.log(element.canvas);
-          trocaCor(element,c2);
-      }) 
-      }
+      } 
+    });
 
+    alto.addEventListener('Alto', function() {
+      console.log('identificou mudança');
+      if (this.checked) {
+        console.log('O switch está ligado');
+        //console.log(graficos.length);
+        graficos.forEach(element => {
+            //console.log(element.canvas);
+            trocaCor(element,c2);
+        })
+      } 
     });
