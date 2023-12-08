@@ -162,7 +162,7 @@ var myRadarChart = new Chart(ctx4, {
         {
             label: '02',
             data: [8, 25, 16, 25, 2], // Valores para cada categoria
-            backgroundColor: 'rgba(54, 162, 235, 0.2)', // Cor de preenchimento
+            backgroundColor: 'rgba(54, 162, 255, 0.2)', // Cor de preenchimento
             borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda
             borderWidth: 1
         }
