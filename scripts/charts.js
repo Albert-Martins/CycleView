@@ -56,3 +56,31 @@ chart1 = new Chart(chart1Ctx, {
         maintainAspectRatio: true // Mantém a proporção do gráfico
     }
 });
+
+
+chart2Ctx = document.querySelector('canvas#chart2').getContext('2d');
+
+chart2 = new Chart(chart2Ctx, {
+    type: 'radar',
+    data: {
+      labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5'],
+      datasets: [{
+        label: 'Valores',
+        data: [10, 20, 15, 25, 18], // Valores para cada categoria
+        backgroundColor: 'rgba(54, 162, 235, 0.2)', // Cor de preenchimento
+        borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda
+        borderWidth: 1
+      }]
+    },
+    options: {
+      // Opções adicionais, como título, legenda, etc.
+      scale: {
+        angleLines: {
+          display: true
+        },
+        ticks: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
