@@ -85,10 +85,11 @@ function expandir(elem){
    
     switchElement.addEventListener('change', function() {
       
-      // azul, amarelo, rosa, verde, cinza
-      c1 = ['#0018D1','#FFBA00','#E866DC','#17963D','#66717A'];
-      //azul, verde, amarelo, vermelho, rosa
-      c2 = ['#1E31DB','#2BDC7B','#DBCC24','#DB3213','#CD0EDB'];
+      // azul, verde, amarelo, cinza, rosa, vermelho
+      c1 = ['#002AB7','#2B8C67','#EDC51F','#DCDEF3','#D436D9', '#9A1801'];
+      //azul, verde, amarelo, vermelho, rosa, laranja
+      c2 = ['#1E31DB','#2BDC7B','#DBCC24','#DB3213','#CD0EDB', '#DB6500'];
+      
       
       if (this.checked) {
         //console.log('O switch está ligado');
