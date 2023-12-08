@@ -84,7 +84,7 @@ function expandir(elem){
 
    
     switchElement.addEventListener('change', function() {
-      
+      console.log('identificou mudança');
       // azul, verde, amarelo, cinza, rosa, vermelho
       c1 = ['#002AB7','#2B8C67','#EDC51F','#DCDEF3','#D436D9', '#9A1801'];
       //azul, verde, amarelo, vermelho, rosa, laranja
@@ -92,14 +92,14 @@ function expandir(elem){
       
       
       if (this.checked) {
-        //console.log('O switch está ligado');
+        console.log('O switch está ligado');
         //console.log(graficos.length);
         graficos.forEach(element => {
             //console.log(element.canvas);
             trocaCor(element,c1);
         })
       } else {
-        //console.log('O switch está desligado');
+        console.log('O switch está desligado');
         graficos.forEach(element => {
           //console.log(element.canvas);
           trocaCor(element,c2);
