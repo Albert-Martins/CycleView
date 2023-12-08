@@ -148,29 +148,27 @@ var meuGrafico3 = new Chart(ctx3, {
 
 
 var ctx4 = document.getElementById('meuGrafico4').getContext('2d');
-var meuGrafico4 = new Chart(ctx4, {
-    type: 'bar',
+var myRadarChart = new Chart(ctx4, {
+    type: 'radar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: 'Example Dataset',
-            data: [2, 8, 19, 5, 20, 27],
-            backgroundColor: [
-                'blue'
-                
-            ]
-        },
-        {
-            label: 'Example Dataset',
-            data: [20, 20, 20, 20, 20, 20],
-            backgroundColor: [
-                'green',
-                
-            ]
-        }]
+      labels: ['Categoria 1', 'Categoria 2', 'Categoria 3', 'Categoria 4', 'Categoria 5'],
+      datasets: [{
+        label: 'Valores',
+        data: [10, 20, 15, 25, 18], // Valores para cada categoria
+        backgroundColor: 'rgba(54, 162, 235, 0.2)', // Cor de preenchimento
+        borderColor: 'rgba(54, 162, 235, 1)', // Cor da borda
+        borderWidth: 1
+      }]
     },
     options: {
-        responsive: true,
-        maintainAspectRatio: true // Mantém a proporção do gráfico
+      // Opções adicionais, como título, legenda, etc.
+      scale: {
+        angleLines: {
+          display: true
+        },
+        ticks: {
+          beginAtZero: true
+        }
+      }
     }
-});
+  });
