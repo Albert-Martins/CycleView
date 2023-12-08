@@ -52,14 +52,14 @@ i.fa-gear{
     height: 10px;
     border-radius: 50%;
     border: 2px solid #fff;
-    background-color: #ffffff00;
+    background-color: white;
     outline: none;
     margin-bottom: 2px;
     margin-right: 5px;
 }
 
 #menuOpcoes div#radioGroup input:checked{
-    background-color: white;
+    background-color: #ffffff00;
 
 }
 
@@ -127,7 +127,7 @@ i.fa-gear{
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: #686868;
+    background: #909090;
     transition: 0.4s;
     appearance: none;
 }
@@ -135,7 +135,7 @@ i.fa-gear{
 /* Estilizando a bolinha deslizante quando o toggle está ativo */
 .slider:checked::before {
     appearance: none;
-    background: #007BFF;
+    background: #686868;
     transform: translateX(24px);
 }
 

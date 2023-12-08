@@ -148,14 +148,17 @@ function updateFilterStyle(){
 
         pedalInputs.forEach((item) => {
                 item.setAttribute('disabled','disabled');
+                item.setAttribute('title','É possível selecionar somente até seis itens. Pois o excesso de itens sobrecarrega a visualização dos dados gráficos.')
         });
     }else{
         pedalInputs.forEach((item) => {
             item.removeAttribute('disabled');
+            item.removeAttribute('title');
     });
     }
 
     pedalInputsChecked.forEach((item) => {
         item.removeAttribute('disabled');
+        item.removeAttribute('title');
     });
 }

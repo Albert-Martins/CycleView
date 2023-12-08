@@ -28642,17 +28642,17 @@
     
     <i id="closeDataMenuIcon" class="fa-solid fa-xmark" onclick="closeMenu(this)" title="Fechar menu"></i>
 
-    <div id="menuOpcoes" class='menu'>
+    <div id="menuOpcoes" class='menu' onchange="prepareItems();">
         
         <h3>Opções</h3>
 
         <p>Cores:</p>
 
         <div id="radioGroup">
-            <input type="radio" id="padrao" name="cor" checked>
+            <input type="radio" id="padrao" name="cor" value="0" checked>
             <label for="padrao">Padrão</label>
             <br>
-            <input type="radio" id="altoContraste" name="cor">
+            <input type="radio" id="altoContraste" name="cor" value="1">
             <label for="altoContraste" title="Auxilia na identificação por cores para pessoas com Daltonismo" >Alto Contraste</label>
         </div>
 
@@ -28720,13 +28720,25 @@
         </div>
         </div> -->
 
-    <div class="box" id="chart1"> <canvas id="chart1"></canvas><button id="expandir1" class="expandir" chart="chart1" onclick="expandir(this)"><i class="fa-solid fa-expand"></i></button>
+    <div class="box" id="chart1"> 
+        <canvas id="chart1"></canvas>
+        <button id="expandir1" class="expandir" chart="chart1" onclick="expandir(this)"><i class="fa-solid fa-expand"></i></button>
     </div>
 
-    <div class="box" id="chart2">Selecione dados no filtro para visualizar...</div>
-    <div class="box" id="chart3">Selecione dados no filtro para visualizar...</div>
-    <div class="box" id="chart4">Selecione dados no filtro para visualizar...</div>
+    <div class="box" id="chart2"> 
+        <canvas id="chart2"></canvas>
+        <button id="expandir2" class="expandir" chart="chart2" onclick="expandir(this)"><i class="fa-solid fa-expand"></i></button>
+    </div>
 
+    <div class="box" id="chart3"> 
+        <canvas id="chart3"></canvas>
+        <button id="expandir3" class="expandir" chart="chart3" onclick="expandir(this)"><i class="fa-solid fa-expand"></i></button>
+    </div>
+
+    <div class="box" id="chart4"> 
+        <canvas id="chart4"></canvas>
+        <button id="expandir4" class="expandir" chart="chart4" onclick="expandir(this)"><i class="fa-solid fa-expand"></i></button>
+    </div>
     </main>
 
 
@@ -28735,6 +28747,7 @@
 
     <div id="menuoverlay" class="overlay" onclick="closeMenu(this)"></div>
     
+    <script src="scripts/options.js"></script>
     <script src="scripts/loadData.js"></script>
     <script src="scripts/cyclistFilter.js"></script>
     <script src="scripts/menu.js"></script>

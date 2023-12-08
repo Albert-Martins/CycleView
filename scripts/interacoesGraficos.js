@@ -1,11 +1,8 @@
 function expandir(elem){
   chartID = elem.getAttribute('chart');
-  
-  console.log(chartID);
 
   chartBox = document.querySelector(`#${chartID}`);
   canvas = document.querySelector(`#${chartID} canvas#${chartID}`);
-  console.log(canvas.id);
 
   if(getCSSAttribute(chartBox,'position') == 'relative'){
     
@@ -19,8 +16,6 @@ function expandir(elem){
     chartBox.style.height = '100%';
 
     elem.innerHTML = '<i class="fa-solid fa-compress"></i>';
-
-    console.log (getCSSAttribute(chartBox,'position'));
 
   }else{
     chartBox.style.position = 'relative';
@@ -37,8 +32,6 @@ function expandir(elem){
   }
 }
   
-
-
     /*function expandir(div,Canvagrafico,grafico, botao) {
         document.getElementById(div).style.display = 'block';
         document.getElementById(botao).style.display = 'block';

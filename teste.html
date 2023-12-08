@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart.js Legend com usePointStyle</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="myChart" width="400" height="200"></canvas>
+
+  <script>
+    // Dados do gráfico
+    const data = {
+      labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+      datasets: [{
+        label: 'Vendas',
+        data: [20, 40, 10, 30, 50],
+        pointRadius: 10,
+        pointStyle: 'circle',
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+      }]
+    };
+
+    // Configuração do gráfico
+    const config = {
+      type: 'line',
+      data: data,
+      options: {
+        scales: {
+          x: {
+            type: 'linear',
+            position: 'bottom'
+          },
+          y: {
+            beginAtZero: true
+          }
+        },
+        legend: {
+          display: true,
+          labels: {
+            usePointStyle: true // Usa o estilo de ponto na legenda
+          }
+        }
+      }
+    };
+
+    // Criação do gráfico
+    const ctx = document.getElementById('myChart').getContext('2d');
+    const myChart = new Chart(ctx, config);
+  </script>
+</body>
+</html>
