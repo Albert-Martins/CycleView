@@ -100,10 +100,10 @@ function expandir(elem){
       } 
     });
 
-    alto.addEventListener('Alto', function() {
+    alto.addEventListener('change', function() {
       console.log('identificou mudança');
       if (this.checked) {
-        console.log('O switch está ligado');
+        console.log('alto');
         //console.log(graficos.length);
         graficos.forEach(element => {
             //console.log(element.canvas);
